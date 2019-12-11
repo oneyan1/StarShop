@@ -11,10 +11,17 @@
 }
 
 .search-input{
-    width: 60%;
+    width: 50%;
 }
 
 .category-btn button{
     padding: 11px;
     margin-left: 10px;
+}
+
+.btn-cart{
+    font-size: 35px;
+    border: none;
+    background-color: #fff;
+    padding: 10px;
 }
