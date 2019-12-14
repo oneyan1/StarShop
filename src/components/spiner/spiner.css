@@ -77,9 +77,10 @@
 .loadingio-spinner-double-ring-b2sw8zzt7ng {
     width: 204px;
     height: 204px;
-    display: inline-block;
+    display: flex;
     overflow: hidden;
     background: #ffffff;
+    margin: 0 auto;
 }
 .ldio-be5id5epoe7 {
     width: 100%;
