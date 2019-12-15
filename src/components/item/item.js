@@ -1,7 +1,7 @@
 import React, {Fragment} from "react";
 import './item.css'
 
-const Item = ({starship})=>{
+const Item = ({starship, onAddedToCart})=>{
     const {id ,name, model, costInCredits } = starship;
     let price = costInCredits;
     if(price > 1000000) price = price/1000000 + "M CRED"
@@ -20,7 +20,9 @@ const Item = ({starship})=>{
                     </div>
                     <div className="btn-block">
                         <button className="btn btn-outline-success">Info</button>
-                        <button className="btn btn-outline-success">Buy</button>
+                        <button className="btn btn-outline-success"
+                                onClick={onAddedToCart}>
+                            Buy</button>
                     </div>
 
                 </div>

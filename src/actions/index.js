@@ -1,26 +1,38 @@
 
 const transportLoaded = (newTransport) => {
     return {
-        type:'TRANSPORTS_LOADED',
+        type:'FETCH_TRANSPORTS_SUCCESS',
         payload : newTransport
     };
 };
 
 const transportRequested = ()=>{
     return {
-        type: 'TRANSPORTS_REQUESTED'
+        type: 'FETCH_TRANSPORTS_REQUESTED'
     }
 };
 
 const transportError = (error) =>{
     return {
-        type: 'TRANSPORT_ERROR',
+        type: 'FETCH_TRANSPORT_FAILURE',
         payload:error
     }
 };
 
+export const transportAddedToCart = (transportId) =>{
+  return{
+      type:"TRANSPORT_ADDED_TO_CART",
+      payload: transportId
+  }
+};
+
+const fetchTransport = (dispatch, swapiService) => ()=>{
+    dispatch(transportRequested());
+    swapiService.getAllStarships()
+        .then((starship)=>{ dispatch(transportLoaded(starship));})
+        .catch((err) =>{ dispatch(transportError(err))});
+}
+
 export {
-    transportLoaded,
-    transportRequested,
-    transportError
+    fetchTransport
 };

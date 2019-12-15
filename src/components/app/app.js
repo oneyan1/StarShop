@@ -10,7 +10,6 @@ const App = ()=>{
     return(
             <div className="container">
                 <Header></Header>
-
                     <Switch>
                         <Route path="/"
                                component = {HomePage}
@@ -20,7 +19,6 @@ const App = ()=>{
                                component = {CartPage}
                         />
                     </Switch>
-
             </div>
     )
 };
