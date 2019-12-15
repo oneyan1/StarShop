@@ -1,0 +1,13 @@
+.total-price{
+    display: flex;
+    justify-content: space-between;
+    font-size: 35px;
+}
+
+.shopping-cart{
+    padding: 20px;
+}
+
+td button{
+    margin-right: 5px;
+}

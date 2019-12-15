@@ -6,6 +6,21 @@ const transportLoaded = (newTransport) => {
     };
 };
 
+const transportRequested = ()=>{
+    return {
+        type: 'TRANSPORTS_REQUESTED'
+    }
+};
+
+const transportError = (error) =>{
+    return {
+        type: 'TRANSPORT_ERROR',
+        payload:error
+    }
+};
+
 export {
-    transportLoaded
+    transportLoaded,
+    transportRequested,
+    transportError
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import { SwapiServiceProvider, SwapiServiceConsumer} from "../swapi-sevice-contex";
+import { SwapiServiceConsumer} from "../swapi-sevice-contex";
 
 const WithSwapiService = () => (Wrapper) =>{
     return (props) =>{

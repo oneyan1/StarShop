@@ -1,31 +1,68 @@
 import React, {Component} from "react";
-import "./item-list.css"
-import Item from "../item";
+
+import { WithSwapiService } from "../hoc";
 import { connect } from 'react-redux';
+import {transportLoaded, transportRequested, transportError} from '../../actions'
+import {compose} from "../../utils";
+
+import Spiner from "../spiner";
+import Item from "../item";
+
+import "./item-list.css"
+import ErrorIndicator from "../error-indicator";
 
 class ItemList extends Component{
+
+    componentDidMount() {
+        const { swapiService, transportLoaded, transportRequested, transportError } = this.props;
+        transportRequested();
+        swapiService.getAllStarships()
+            .then((starship)=>{ transportLoaded(starship);})
+            .catch((err) =>{ transportError(err)});
+    };
+
     render(){
-        const { starships } = this.props;
+        const { starships, loading, error } = this.props;
+
+        if(loading){
+            return <Spiner/>;
+        }
+
+        if(error){
+            return <ErrorIndicator/>
+        }
+
         return(
-            <ul>
+            <div className="row">
                 {
                     starships.map((starship)=>{
                         return(
-                            <li key = {starship.id}>
+                            <div className="col-4" key = {starship.id}>
                                 <Item starship ={starship}/>
-                            </li>
+                            </div>
                         )
                     })
                 }
-            </ul>
+            </div>
         )
     }
 }
 
-const mapStateToProps = ({starships}) =>{
+const mapStateToProps = ({starships, loading, error}) =>{
     return{
-        starships
+        starships,
+        loading,
+        error
     }
 };
 
-export default connect(mapStateToProps)(ItemList);
+const mapDispatchToProps = {
+    transportLoaded,
+    transportRequested,
+    transportError
+};
+
+
+export default compose(
+    WithSwapiService(),
+    connect(mapStateToProps, mapDispatchToProps))(ItemList)

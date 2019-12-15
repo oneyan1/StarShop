@@ -1,0 +1,31 @@
+.item-wrap{
+    padding: 10px;
+ }
+
+.item-img{
+    padding: 5px;
+}
+
+.item-img img{
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.item-title{
+    text-align: center;
+    margin-bottom: 15px;
+}
+.item-name{
+    font-size: 27px;
+}
+
+.btn-block{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 15px;
+}
+
+.item-price{
+    font-size: 20px;
+}

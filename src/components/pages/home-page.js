@@ -4,7 +4,11 @@ import ItemList from "../item-list";
 
 const HomePage = ()=>{
     return(
-        <ItemList/>
+        <div>
+            <ItemList/>
+
+        </div>
+
     )
 };
 

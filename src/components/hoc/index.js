@@ -1,3 +1,3 @@
-import WithSwapiService from "./whith-swapi-service";
+import WithSwapiService from "./with-swapi-service";
 
-export default WithSwapiService;
+export {WithSwapiService};
