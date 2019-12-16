@@ -26,6 +26,21 @@ export const transportAddedToCart = (transportId) =>{
   }
 };
 
+export const transportRemovedFromCart = (transportId) =>{
+    return{
+        type:"TRANSPORT_REMOVED_FROM_CART",
+        payload: transportId
+    }
+};
+
+export const allTransportsRemovedFromCart = (transportId) =>{
+    return{
+        type:"ALL_TRANSPORTS_REMOVED_FROM_CART",
+        payload: transportId
+    }
+};
+
+
 const fetchTransport = (dispatch, swapiService) => ()=>{
     dispatch(transportRequested());
     swapiService.getAllStarships()

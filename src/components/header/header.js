@@ -9,11 +9,6 @@ const Header = ()=>{
                 <div className="navbar-logo navbar-brand" href="#">StarShop</div>
             </Link>
             <input className="search-input form-control form-control-lg" type="text" placeholder="Search"></input>
-            <div className="category-btn d-flex">
-                <button className="btn btn-outline-primary">All</button>
-                <button className="btn btn-outline-primary">Starship</button>
-                <button className="btn btn-outline-primary">Vehicle</button>
-            </div>
             <Link to="/cart">
                 <button className="btn-cart"><i className="fa fa-shopping-cart" aria-hidden="true"></i></button>
             </Link>

@@ -2,7 +2,7 @@ import React, {Fragment} from "react";
 import './item.css'
 
 const Item = ({starship, onAddedToCart})=>{
-    const {id ,name, model, costInCredits } = starship;
+    const {id ,name, model, costInCredits, manufacturer, length, passengers } = starship;
     let price = costInCredits;
     if(price > 1000000) price = price/1000000 + "M CRED"
     else if(price === "unknown") price = "not available";
@@ -19,12 +19,15 @@ const Item = ({starship, onAddedToCart})=>{
                         <div className="item-price text-danger">{price}</div>
                     </div>
                     <div className="btn-block">
-                        <button className="btn btn-outline-success">Info</button>
                         <button className="btn btn-outline-success"
                                 onClick={onAddedToCart}>
                             Buy</button>
                     </div>
-
+                    <div className="jumbotron item-details">
+                        <span>Manufacturer: {manufacturer}</span>
+                        <span>Length: {length}</span>
+                        <span>Passengers: {passengers}</span>
+                    </div>
                 </div>
         </Fragment>
     )

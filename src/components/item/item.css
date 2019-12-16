@@ -29,3 +29,9 @@
 .item-price{
     font-size: 20px;
 }
+
+.item-details{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
